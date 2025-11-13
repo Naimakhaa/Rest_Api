@@ -1,10 +1,13 @@
 <?php
-class Database {
+class Database
+{
     private $conn;
 
-    public function connect() {
+    public function connect()
+    {
         $this->conn = null;
         try {
+            
             $host = getenv('POSTGRES_HOST');
             $db   = getenv('POSTGRES_DATABASE');
             $user = getenv('POSTGRES_USER');
@@ -24,4 +27,3 @@ class Database {
         return $this->conn;
     }
 }
-?>
