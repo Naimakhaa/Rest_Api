@@ -1,7 +1,6 @@
 <?php
-require_once __DIR__ . '/core/AuthMiddleware.php';
-require_once __DIR__ . '/api/MahasiswaController.php';
-
+require_once __DIR__ . '/rest-api-main/core/AuthMiddleware.php';
+require_once __DIR__ . '/rest-api-main/api/MahasiswaController.php';
 // Inisialisasi middleware auth
 $auth = new AuthMiddleware();
 
