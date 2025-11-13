@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . '/core/AuthMiddleware.php';
 require_once __DIR__ . '/api/MahasiswaController.php';
+
 // Inisialisasi middleware auth
 $auth = new AuthMiddleware();
 
@@ -11,7 +12,8 @@ $method = $_SERVER['REQUEST_METHOD'];
 switch (true) {
     // root (tanpa auth)
     case $uri === '/':
-        echo json_encode(["message" => "Koneksi success"]);
+        $host = getenv('DB_HOST') ?: 'localhost';
+        echo json_encode(["message" => "Koneksi success -> DB_HOST $host"]);
         break;
 
     // semua route mahasiswa -> wajib auth
