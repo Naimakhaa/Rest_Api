@@ -3,7 +3,7 @@ class Database
 {
     private $host = "localhost";
     private $port = "3306";
-    private $db_name = "Rest_api";
+    private $db_name = "rest_api";
     private $username = "root";
     private $password = "";
     public $conn;
