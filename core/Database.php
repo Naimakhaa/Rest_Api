@@ -10,16 +10,14 @@ class Database
     private $sslmode;
     public $conn;
 
-    public function __construct()
-    {
-        $this->type = getenv('DB_TYPE') ?: 'mysql';
-        $this->host = getenv('DB_HOST') ?: 'localhost';
-        $this->port = getenv('DB_PORT') ?: '3306';
-        $this->db_name = getenv('DB_NAME') ?: 'kampus_db';
-        $this->username = getenv('DB_USER') ?: 'root';
+    public function __construct() {
+        $this->type = getenv('DB_TYPE') ?: 'pgsql'; // vercel pakai pgsql
+        $this->host = getenv('DB_HOST') ?: 'aws-1-ap-southeast-1.pooler.supabase.com';
+        $this->port = getenv('DB_PORT') ?: '5432';
+        $this->db_name = getenv('DB_NAME') ?: 'postgres';
+        $this->username = getenv('DB_USER') ?: 'postgres.yrzjkloblhwdikupfyoo';
         $this->password = getenv('DB_PASS') ?: '';
-        $this->sslmode = getenv('DB_SSLMODE') ?: 'require';
-        // vercel pakai require
+        $this->sslmode = getenv('DB_SSLMODE') ?: ''; // vercel pakai require
         // getenv() hanya akan mengambil nilai dari environment variable sistem, bukan dari file .env apa pun.
         // getenv() hanya dipakai untuk production server
     }
